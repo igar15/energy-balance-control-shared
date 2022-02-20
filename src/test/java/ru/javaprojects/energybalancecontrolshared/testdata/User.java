@@ -3,7 +3,6 @@ package ru.javaprojects.energybalancecontrolshared.testdata;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
-import java.util.Objects;
 import java.util.Set;
 
 public class User {

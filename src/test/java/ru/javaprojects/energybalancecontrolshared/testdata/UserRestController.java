@@ -1,7 +1,5 @@
 package ru.javaprojects.energybalancecontrolshared.testdata;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +14,6 @@ import static ru.javaprojects.energybalancecontrolshared.testdata.UserTestData.u
 @RequestMapping(value = "/api/users", produces = MediaType.APPLICATION_JSON_VALUE)
 @Secured("ROLE_ADMIN")
 public class UserRestController {
-
-    @Autowired
-    private ApplicationContext applicationContext;
 
     @GetMapping("/{id}")
     public String get(@PathVariable long id) {
