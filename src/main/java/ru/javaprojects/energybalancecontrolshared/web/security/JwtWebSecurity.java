@@ -8,15 +8,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-public abstract class BasicWebSecurity extends WebSecurityConfigurerAdapter {
+public abstract class JwtWebSecurity extends WebSecurityConfigurerAdapter {
 
     protected final JwtAuthorizationFilter jwtAuthorizationFilter;
     protected final RestAuthenticationEntryPoint restAuthenticationEntryPoint;
     protected final RestAccessDeniedHandler restAccessDeniedHandler;
 
-    public BasicWebSecurity(JwtAuthorizationFilter jwtAuthorizationFilter,
-                            RestAuthenticationEntryPoint restAuthenticationEntryPoint,
-                            RestAccessDeniedHandler restAccessDeniedHandler) {
+    public JwtWebSecurity(JwtAuthorizationFilter jwtAuthorizationFilter,
+                          RestAuthenticationEntryPoint restAuthenticationEntryPoint,
+                          RestAccessDeniedHandler restAccessDeniedHandler) {
         this.jwtAuthorizationFilter = jwtAuthorizationFilter;
         this.restAuthenticationEntryPoint = restAuthenticationEntryPoint;
         this.restAccessDeniedHandler = restAccessDeniedHandler;
