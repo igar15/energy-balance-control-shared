@@ -9,13 +9,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
-import org.springframework.transaction.annotation.Transactional;
 import ru.javaprojects.energybalancecontrolshared.util.exception.ErrorType;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @SpringBootTest
-@Transactional
 @ActiveProfiles("dev")
 @AutoConfigureMockMvc
 @TestPropertySource(locations = "classpath:test.properties")
