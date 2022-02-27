@@ -12,7 +12,8 @@ public enum ErrorType {
     BAD_CREDENTIALS_ERROR("Bad credentials error", HttpStatus.BAD_REQUEST),
     DISABLED_ERROR("Disabled error", HttpStatus.FORBIDDEN),
     BAD_TOKEN_ERROR("Bad token error", HttpStatus.UNAUTHORIZED),
-    WRONG_REQUEST("Wrong request", HttpStatus.BAD_REQUEST);
+    WRONG_REQUEST("Wrong request", HttpStatus.BAD_REQUEST),
+    FEIGN_ERROR("Remote resource request failed", HttpStatus.BAD_REQUEST);
 
     private final String errorCode;
     private final HttpStatus status;
