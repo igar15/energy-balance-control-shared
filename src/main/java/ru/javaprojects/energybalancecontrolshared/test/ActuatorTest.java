@@ -16,14 +16,12 @@ public abstract class ActuatorTest extends AbstractControllerTest {
     @WithMockCustomUser(userId = ADMIN_ID_STRING, userRoles = {ADMIN_ROLE})
     void actuator() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get(ACTUATOR_PATH))
-                .andDo(print())
                 .andExpect(status().isOk());
     }
 
     @Test
     void actuatorUnAuth() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get(ACTUATOR_PATH))
-                .andDo(print())
                 .andExpect(status().isUnauthorized())
                 .andExpect(errorType(UNAUTHORIZED_ERROR))
                 .andExpect(detailMessage(NOT_AUTHORIZED));
@@ -33,7 +31,6 @@ public abstract class ActuatorTest extends AbstractControllerTest {
     @WithMockCustomUser(userId = USER_ID_STRING, userRoles = {USER_ROLE})
     void actuatorNotAdmin() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get(ACTUATOR_PATH))
-                .andDo(print())
                 .andExpect(status().isForbidden())
                 .andExpect(errorType(ACCESS_DENIED_ERROR))
                 .andExpect(detailMessage(ACCESS_DENIED));
